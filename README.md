@@ -14,7 +14,7 @@
 | 개발 기간 | 2026.03.30 ~ 2026.04.10 |
 | 팀 구성 | 6인 팀 프로젝트 (2팀) |
 | 담당 역할 | 팀장 · 코드 병합, 메인 루프 제작, 차량 물리 엔진 설계, 프로젝트 공용 타입 설계 |
-| 시연 영상 | 준비 중 |
+| 시연 영상 | [YouTube](https://youtu.be/DRJYtie3tow) |
 
 ## 🎯 프로젝트 개요
 국가 면허 2종 보통 시험의 A·B 코스와 T자·평행 주차장을 2D로 정밀하게 재현한 C++ 기반 도로주행 시뮬레이션입니다. 차량의 위치와 조향각을 실시간으로 계산하고, 벽·경계석·NPC 차량과의 충돌을 판정하기 위해 자체 시뮬레이션 엔진(`SimEngine`)을 설계했습니다.
@@ -155,4 +155,6 @@ static bool overlapOnAxis(const RectOBB& a, const RectOBB& b, const Vec2& axis) 
 | ![결과](images/05_result.png) | 시험 결과 점수판 및 감점 상세 화면 |
 
 ## 🎬 시연 영상
-> 준비 중입니다.
+[![시연 영상](https://img.youtube.com/vi/DRJYtie3tow/0.jpg)](https://youtu.be/DRJYtie3tow)
+
+▶️ https://youtu.be/DRJYtie3tow
