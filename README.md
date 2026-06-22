@@ -53,4 +53,4 @@ flowchart LR
 | ![화면2](images/02.png) | 충돌 판정 및 차량 상태 디버그 UI |
 
 ## 🎬 시연 영상
-[![시연 영상](images/thumbnail.png)](여기에-유튜브-링크)
+[![시연 영상](images/thumbnail.png)](https://youtu.be/DRJYtie3tow)
