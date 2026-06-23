@@ -144,15 +144,12 @@ static bool overlapOnAxis(const RectOBB& a, const RectOBB& b, const Vec2& axis) 
 > **Solution:** 차량 진행 방향(`fwdOff`)과 좌우(`latOff`) 오프셋을 보수적으로 잡아 전·후·좌·우와 중심까지 **9개 지점을 타일 샘플링**하고, 각 지점을 `isPassable`로 검사했습니다. 오프셋 값을 보도 끝선·주차 차량과의 오탐을 피하도록 조정해, 한 점 검사보다 정밀하면서도 과민하지 않은 벽 판정을 구현했습니다.
 
 ## 📸 스크린샷
-> `images/` 폴더에 아래 화면 캡처를 추가해 주세요.
 
 | 화면 | 설명 |
 |------|------|
-| ![시작화면](images/01_menu.png) | 시작 메뉴 화면 (주/야간 환경 변화·패럴랙스 배경 애니메이션) |
-| ![A코스](images/02_course_a.png) | A코스 시내 도로 주행 (신호등·횡단보도·NPC 차량) |
-| ![B코스](images/03_course_b.png) | B코스 회전교차로 복합 도로 주행 |
-| ![주차](images/04_parking.png) | T자·평행 주차 모드 (목표 슬롯 가이드·주차 성공 그린 글로우) |
-| ![결과](images/05_result.png) | 시험 결과 점수판 및 감점 상세 화면 |
+| ![도로 주행](images/01.png) | 시내 도로 주행 화면 — 회전교차로·건물·신호등이 배치된 맵과 Speed·Gear·Engine·Penalty·Collisions·Checkpoints를 표시하는 주행 HUD |
+| ![주차](images/02.png) | 주차 모드 — 여러 주차 슬롯과 주차된 차량들 사이에서 목표 슬롯(빨간 테두리·화살표)으로 진입하는 화면 |
+| ![결과](images/03.png) | 주행 시험 결과 화면 — 합격 여부·사유·주행 시간·감점·충돌 횟수와 감점 로그, Restart·Next·Quit·Replay 버튼 |
 
 ## 🎬 시연 영상
 [![시연 영상](https://img.youtube.com/vi/DRJYtie3tow/0.jpg)](https://youtu.be/DRJYtie3tow)
