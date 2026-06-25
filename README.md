@@ -143,12 +143,23 @@ static bool overlapOnAxis(const RectOBB& a, const RectOBB& b, const Vec2& axis) 
 > **Challenge:** 차량 중심 한 점만으로 타일 통과 가능 여부를 검사하면, 차체 모서리가 벽에 닿았는데도 통과되거나 반대로 보도 경계·정차한 NPC 옆에서 멀쩡한데도 충돌로 잘못 잡히는 경우가 있었습니다.
 > **Solution:** 차량 진행 방향(`fwdOff`)과 좌우(`latOff`) 오프셋을 보수적으로 잡아 전·후·좌·우와 중심까지 **9개 지점을 타일 샘플링**하고, 각 지점을 `isPassable`로 검사했습니다. 오프셋 값을 보도 끝선·주차 차량과의 오탐을 피하도록 조정해, 한 점 검사보다 정밀하면서도 과민하지 않은 벽 판정을 구현했습니다.
 
-## 📸 스크린샷
+## 📸 프로젝트 흐름 및 이미지 기록
+> 화면은 주행 → 주차 → 결과 순서로 배치했습니다. 이 프로젝트의 핵심은 단순 맵 출력보다 차량 물리, 충돌 판정, 채점 루프가 한 프레임 안에서 안정적으로 돌아가도록 통합한 점입니다.
+
+```mermaid
+flowchart LR
+    Input[Keyboard Input] --> Physics[Vehicle Physics]
+    Physics --> Sweep[Sweep Test]
+    Sweep --> Collision[OBB/SAT Collision]
+    Collision --> Score[Penalty & Checkpoint]
+    Score --> Render[SFML Render + HUD]
+    Render --> Input
+```
 
 | 화면 | 설명 |
 |------|------|
 | ![도로 주행](images/01.png) | 시내 도로 주행 화면 — 회전교차로·건물·신호등이 배치된 맵과 Speed·Gear·Engine·Penalty·Collisions·Checkpoints를 표시하는 주행 HUD |
-| ![주차](images/02.png) | 주차 모드 — 여러 주차 슬롯과 주차된 차량들 사이에서 목표 슬롯(빨간 테두리·화살표)으로 진입하는 화면 |
+| ![주차](images/02.png) | 주차 모드 — 여러 주차 슬롯과 주차된 차량들 사이에서 목표 슬롯으로 진입하며 OBB 충돌 판정과 저속 제어를 검증 |
 | ![결과](images/03.png) | 주행 시험 결과 화면 — 합격 여부·사유·주행 시간·감점·충돌 횟수와 감점 로그, Restart·Next·Quit·Replay 버튼 |
 
 ## 🎬 시연 영상
