@@ -7,6 +7,9 @@
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=flat-square&logo=visualstudio&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 
+<p align="center"><img src="docs/demo.gif" width="640" alt="Demo"></p>
+<p align="center">주차 모드 주행·판정 장면 · <a href="https://youtu.be/DRJYtie3tow">▶ 전체 영상</a></p>
+
 ## 📌 프로젝트 정보
 | 항목 | 내용 |
 |------|------|
@@ -20,6 +23,11 @@
 국가 면허 2종 보통 시험의 A·B 코스와 T자·평행 주차장을 2D로 정밀하게 재현한 C++ 기반 도로주행 시뮬레이션입니다. 차량의 위치와 조향각을 실시간으로 계산하고, 벽·경계석·NPC 차량과의 충돌을 판정하기 위해 자체 시뮬레이션 엔진(`SimEngine`)을 설계했습니다.
 
 저는 팀장으로서 차량 물리 엔진을 직접 구현하고, 프로젝트 공용 타입을 설계했으며, 메인 루프를 제작해 6인 팀원이 각각 구현한 맵·렌더·신호·채점·입력 모듈을 하나의 실행 가능한 시뮬레이션으로 병합했습니다.
+
+## 📂 저장소 범위 안내
+> 6인 팀 프로젝트 중 **본인 담당 소스만 공개**한 저장소입니다 — 공용 타입 `common_types.h`, 물리 엔진 `physics.h`/`sim_engine.cpp`, 메인 루프 `main.cpp`. 팀원 담당 모듈(맵·렌더·채점·리플레이)은 포함되어 있지 않아 **단독 빌드는 불가**하며, 전체 동작은 [시연 영상](https://youtu.be/DRJYtie3tow)을 참조해 주세요.
+>
+> 빌드에 필요한 외부 의존성: **SFML 3.0.2 · Dear ImGui 1.91.9 · imgui-sfml 3.0** (Visual Studio 2022, C++17)
 
 ## ✨ 주요 기능 / 담당 업무
 - **SimEngine 물리 엔진 설계**: 매 프레임 호출되는 `tick(dt, ctrl)`에서 기어(P·R·N·D) 상태에 따라 가속 방향을 결정하고, 가속·제동·조향·관성 감속을 물리 상수 기반으로 갱신해 부드럽고 사실적인 차량 움직임을 구현했습니다.
@@ -166,3 +174,9 @@ flowchart LR
 [![시연 영상](https://img.youtube.com/vi/DRJYtie3tow/0.jpg)](https://youtu.be/DRJYtie3tow)
 
 ▶️ https://youtu.be/DRJYtie3tow
+
+## 📚 설계 문서
+- [ADR (Architecture Decision Records)](docs/adr/) — 주요 기술 의사결정 기록
+
+## 📄 License
+MIT License — [LICENSE](LICENSE) 참조 (본 저장소의 소스는 전부 본인 작성분입니다)
