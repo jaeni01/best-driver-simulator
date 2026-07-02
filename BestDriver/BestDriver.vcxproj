@@ -131,37 +131,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\libs\imgui-1.91.9\imgui.cpp" />
-    <ClCompile Include="..\..\..\libs\imgui-1.91.9\imgui_demo.cpp" />
-    <ClCompile Include="..\..\..\libs\imgui-1.91.9\imgui_draw.cpp" />
-    <ClCompile Include="..\..\..\libs\imgui-1.91.9\imgui_tables.cpp" />
-    <ClCompile Include="..\..\..\libs\imgui-1.91.9\imgui_widgets.cpp" />
-    <ClCompile Include="..\..\..\libs\imgui-sfml-3.0\imgui-SFML.cpp" />
-    <ClCompile Include="course_evaluator.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="map_system.cpp" />
-    <ClCompile Include="parking_evaluator.cpp" />
-    <ClCompile Include="platform.cpp" />
-    <ClCompile Include="renderer.cpp" />
-    <ClCompile Include="replay_player.cpp" />
-    <ClCompile Include="replay_recorder.cpp" />
     <ClCompile Include="sim_engine.cpp" />
-    <ClCompile Include="traffic_system.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\libs\imgui-1.91.9\imgui.h" />
     <ClInclude Include="common_types.h" />
-    <ClInclude Include="course_evaluator.h" />
-    <ClInclude Include="exam_result.h" />
-    <ClInclude Include="map_system.h" />
-    <ClInclude Include="parking_evaluator.h" />
     <ClInclude Include="physics.h" />
-    <ClInclude Include="platform.h" />
-    <ClInclude Include="renderer.h" />
-    <ClInclude Include="replay_player.h" />
-    <ClInclude Include="replay_recorder.h" />
     <ClInclude Include="sim_engine.h" />
-    <ClInclude Include="traffic_system.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
